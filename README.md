@@ -102,3 +102,60 @@ Agregar una columna para el turno y otra para el pirata que debe dar una moneda 
 |p2|2|166|9| | |
 |p3|3|165|8| | |
 |p4|4|164|7| | |
+
+# Nueva Pregunta
+
+Puedes explicarme este problema, incluyendo la parte de los días que se menciona y al final agregar la formula de Excel para resolverlo "Un grupo de 12 piratas de edades diferentes se reparten 2022 monedas, de manera que cada pirata (salvo el más joven) tiene una moneda más que el siguiente más joven. A continuación, cada día se procede de la siguiente manera. Se escoge a un pirata que tenga al menos 11 monedas, y ese da una moneda a todos los demás. Encontrar el mayor número de monedas que un pirata puede llegar a tener."
+
+# Nueva Respuesta
+
+En este problema, se nos presenta un grupo de 12 piratas con diferentes edades y se les reparte un total de 2022 monedas de manera que cada pirata (excepto el más joven) tiene una moneda más que el siguiente más joven.
+
+Después de la distribución inicial de las monedas, se procede a realizar una serie de días en los que se escoge a un pirata que tenga al menos 11 monedas y se le pide que entregue una moneda a cada uno de los demás piratas. Este proceso se repite hasta que todos los piratas tengan el mismo número de monedas. En cada día, el pirata elegido debe tener al menos 11 monedas para poder realizar la operación.
+
+Para resolver el problema y encontrar el mayor número de monedas que un pirata puede llegar a tener, se pueden seguir los siguientes pasos:
+
+Calcular la cantidad de monedas que tiene el pirata más joven, p1. Se sabe que el total de monedas es 2022 y que cada pirata tiene una moneda más que el siguiente más joven. Por lo tanto, se puede deducir la cantidad de monedas que tiene p1 a partir de la siguiente ecuación:
+p1 + (p1+1) + (p1+2) + ... + (p1+10) = 2022
+
+Resolver la ecuación anterior para obtener la cantidad de monedas que tiene p1. Para ello, se puede utilizar la fórmula de la suma de una progresión aritmética:
+p1 + (p1+1) + (p1+2) + ... + (p1+10) = 11p1 + 55 = 2022
+
+11p1 = 1967
+
+p1 = 179
+
+Por lo tanto, el pirata más joven tiene 179 monedas.
+
+Calcular el número máximo de días que se pueden realizar las operaciones de dar una moneda a todos los demás piratas. Se puede ver que el pirata que tenga más monedas nunca entregará ninguna moneda, ya que siempre habrá al menos otro pirata con menos monedas. Por lo tanto, el número máximo de días será el número de monedas que tenga el pirata con menos monedas, menos 1.
+
+Calcular cuántas monedas tendrá cada pirata al final de los días de operaciones. Se puede utilizar una tabla en Excel para hacer un seguimiento de las monedas de cada pirata después de cada día de operaciones. La tabla debe tener una columna para cada pirata y una fila para cada día. Cada celda de la tabla debe contener la cantidad de monedas que tiene el pirata correspondiente después del día correspondiente.
+
+Encontrar el mayor número de monedas que un pirata puede llegar a tener. Para ello, se debe buscar en la tabla la cantidad de monedas más alta que tenga algún pirata después de completar los días de operaciones.
+
+La fórmula de Excel para calcular la cantidad de monedas que tiene el pirata más joven (p1) es:
+
+=(2022-55)/11
+
+La fórmula de Excel para calcular el número máximo de días de operaciones es:
+
+=MIN(A2:A13)-1
+
+Donde A2:A13 son las celdas que contienen la cantidad de monedas de cada pirata después de cada día de operaciones.
+
+La tabla en Excel podría verse así:
+
+|Pirata|Configuración inicial|Día 1|Día 2|Día 3|Día 4|Día 5|Día 6|Día 7|Día 8|Día 9|Día 10|Día 11|
+|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|
+|P1|1|11|21|31|41|51|61|71|81|91|101|1107|
+|P2|2|2|12|22|32|42|52|62|72|82|92|968|
+|P3|3|3|3|13|23|33|43|53|63|73|83|829|
+|P4|4|4|4|4|14|24|34|44|54|64|74|692|
+|P5|5|5|5|5|5|15|25|35|45|55|65|555|
+|P6|6|6|6|6|6|6|16|26|36|46|56|418|
+|P7|7|7|7|7|7|7|7|17|27|37|47|183|
+|P8|8|8|8|8|8|8|8|8|18|28|38|847|
+|P9|9|9|9|9|9|9|9|9|9|19|29|720|
+|P10|10|10|10|10|10|10|10|10|10|10|20|584|
+|P11|11|0|11|21|31|41|51|61|71|81|91|447|
+|P12|2010|2000|1990|1980|1970|1960|1950|1940|1930|1920|1910|191|
